@@ -1,6 +1,6 @@
 # handleplugin
 
-An intellij plugin for running Microsoft's [https://technet.microsoft.com/en-us/sysinternals/handle.aspx](handle) directly from the IDE.
+An intellij plugin for running Microsoft's [handle](https://technet.microsoft.com/en-us/sysinternals/handle.aspx) directly from the IDE.
 Handle specifies which process(es) that lock a certain file or folder.
 
 ## How to use
