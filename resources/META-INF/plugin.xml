@@ -1,0 +1,38 @@
+<idea-plugin version="2">
+  <id>com.github.miicroo.handleplugin</id>
+  <name>Handle plugin</name>
+  <version>1.0</version>
+  <vendor email="unsupported@noemail.com" url="https://github.com/Miicroo/handleplugin">Miicroo</vendor>
+
+  <description><![CDATA[
+      Runs a check against the <a href="https://technet.microsoft.com/en-us/sysinternals/handle.aspx">handle executable</a> from Microsoft Essentials.<br>
+      Handle displays all processes that are currently locking a file.<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+
+    ]]>
+  </change-notes>
+
+  <idea-version since-build="145.0"/>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable instance="com.github.miicroo.handleplugin.configuration.SettingsPage"/>
+    <applicationService serviceImplementation="com.github.miicroo.handleplugin.configuration.Settings"/>
+    <projectService id="ConsoleView" serviceImplementation="com.github.miicroo.handleplugin.ConsoleService"/>
+
+    <toolWindow id="Handle plugin tool window" secondary="true" icon="/icons/unlock-icon-16x16.png" anchor="bottom"
+                  factoryClass="com.github.miicroo.handleplugin.HandlePluginToolWindowFactory"/>
+  </extensions>
+
+  <actions>
+    <action id="HandlePlugin.Execute"
+            class="com.github.miicroo.handleplugin.ProjectMenuClickListener"
+            text="Run handle"
+            description="Executes a handle check"
+            icon="/icons/unlock-icon-16x16.png">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RevealIn"/>
+    </action>
+  </actions>
+
+</idea-plugin>
